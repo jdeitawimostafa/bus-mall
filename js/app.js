@@ -20,9 +20,7 @@ const leftImage = document.getElementById('leftImage');
 const middleImage = document.getElementById('middleImage');
 const rightImage = document.getElementById('rightImage');
 
-// let leftProductIndex = 0;
-// let middleProductIndex = 0;
-// let rightProductIndex = 0;
+
 const clickCounter = 25;
 
 function product(name) {
@@ -31,8 +29,6 @@ function product(name) {
     this.clicks = 0; 
     this.shown = 0;
     product.all.push(this);
-    // newArr.push(this.name);
-
 }
 
 product.all = [];
@@ -48,7 +44,9 @@ for (let i = 0; i<productsArr.length-1;i++){
 }
 
 function renderNewProduct (){
-    while(leftIndex === middleIdnex || leftIndex === rightIndex || rightIndex === middleIdnex || newArr.includes(leftIndex,middleIdnex,rightIndex)){
+    while(leftIndex === middleIdnex || leftIndex === rightIndex || rightIndex === middleIdnex || 
+        newArr.includes(leftIndex) || newArr.includes(middleIdnex) || 
+    newArr.includes(rightIndex)){
      leftIndex = randomNumber( 0,product.all.length-1 );
      middleIdnex = randomNumber( 0,product.all.length-1 );
      rightIndex = randomNumber( 0,product.all.length-1 );
@@ -67,45 +65,9 @@ function renderNewProduct (){
     rightImage.src = product.all[rightIndex].image;
     rightImage.alt = product.all[rightIndex].name;
 
-
-//     let leftIndex = randomNumber( 0,product.all.length-1 );
-//     leftImage.src = product.all[leftIndex].image;
-//     leftImage.alt = product.all[leftIndex].name;
-//      leftProductIndex = leftIndex;
-//      newArr.push(leftIndex);
-//      do{
-//        leftIndex = randomNumber(product.all.length-1)
-//     }while(newArr.includes(leftIndex));
-    
-//      let middleIdnex;
-//      do{
-//      middleIdnex = randomNumber(0,product.all.length-1);
-//      } while(middleIdnex === leftIndex);
-    
-//      middleImage.src = product.all[middleIdnex].image;
-//      middleImage.alt = product.all[middleIdnex].name;
-//      middleProductIndex = middleIdnex;
-//      newArr.push(middleIdnex);
-//      do{
-//        middleIdnex = randomNumber(product.all.length-1)
-//     }while(newArr.includes(leftIndex,middleIdnex,rightIndex));
-
-//     let rightIndex;
-//     do {
-//         rightIndex = randomNumber(0,product.all.length-1);
-//     } while(leftIndex === rightIndex || middleIdnex === rightIndex); 
-//      rightImage.src = product.all[rightIndex].image;
-//      rightImage.alt = product.all[rightIndex].name;
-//      rightProductIndex = rightIndex;
-//      newArr.push(rightIndex);
-
-//     //  do{
-//     //     randomNumber(product.all.length-1)
-//     // }while(newArr.includes(leftIndex,middleIdnex,rightIndex));
-
-//     product.all[leftIndex].shown++;
-//     product.all[middleIdnex].shown++;
-//     product.all[rightIndex].shown++;
+    product.all[leftIndex].shown++;
+    product.all[middleIdnex].shown++;
+    product.all[rightIndex].shown++;
 }
 
 renderNewProduct();
@@ -126,7 +88,6 @@ products.addEventListener('click', function (event){
             }       
             
             counter++;
-            console.log('mostafa');
             renderNewProduct();
             // console.log(product.all);
         }
@@ -144,6 +105,7 @@ products.addEventListener('click', function (event){
 
 
 console.log(newArr);
+console.log(product.all)
 
 function renderChart(){
 let clicksArr = [];
