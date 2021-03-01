@@ -5,8 +5,7 @@
   body {
       width: 960px;
       margin: auto;
-/* background-image:url(/background/mall.jpeg); */
-  }
+background-color: burlywood;  }
 
   header {
       background-color: #e3d18a;
@@ -34,3 +33,4 @@ display: grid;
       background-color: #c39e5c;
       text-align: center;
   }
+
