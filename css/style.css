@@ -18,18 +18,17 @@
       
      }
 .product-edit{
-          margin-bottom: 50px;
-          margin-top: 50px;
           display: inline;
   }
 
   img{
       width: 30%;
+      margin-top: 30px;
   }
 
- /* .all-elements {
+ .all-elements {
 display: grid;
-  } */
+  }
  
   footer {
       background-color: #c39e5c;
@@ -37,7 +36,8 @@ display: grid;
   }
 
 #button{
-align-items: center;
+float: left;
+margin-top: 330px;
 }
 
 #lists{
