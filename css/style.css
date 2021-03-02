@@ -34,3 +34,7 @@ display: grid;
       background-color: #c39e5c;
       text-align: center;
   }
+
+  .lists{
+      display: none;
+  }
