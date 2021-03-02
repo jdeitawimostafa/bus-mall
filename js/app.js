@@ -31,6 +31,9 @@ function product(name) {
     product.all.push(this);
 }
 
+
+
+
 product.all = [];
 let leftIndex = randomNumber( 0,product.all.length-1 );
 let middleIdnex = randomNumber( 0,product.all.length-1 );
@@ -41,6 +44,15 @@ let counter = 0;
 let newArr = [leftIndex,middleIdnex,rightIndex];
 for (let i = 0; i<productsArr.length-1;i++){
     new product(productsArr[i]);
+}
+
+
+
+function getProducts(){
+  const data = localStorage.getItem('product');
+  if(data){
+    renderNewProduct();
+  }
 }
 
 function renderNewProduct (){
@@ -68,9 +80,12 @@ function renderNewProduct (){
     product.all[leftIndex].shown++;
     product.all[middleIdnex].shown++;
     product.all[rightIndex].shown++;
-}
 
-renderNewProduct();
+  }
+  renderNewProduct();
+
+
+ 
 
 products.addEventListener('click', function (event){
     if(counter < clickCounter ) {
@@ -89,12 +104,15 @@ products.addEventListener('click', function (event){
             
             counter++;
             renderNewProduct();
-            // console.log(product.all);
+            console.log(product.all);
         }
     } else{
+      localStorage.setItem('product',JSON.stringify(product.all));
         renderChart();
     }
 });
+getProducts();
+
 // // button
 // const button = document.getElementById('button');
 // button.style.visibility= 'hidden';
