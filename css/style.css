@@ -7,6 +7,7 @@
       margin: auto;
       background-color: #f7d9d9;
   }
+background-color: burlywood;  }
 
   header {
       background-color: #e3d18a;
@@ -15,20 +16,25 @@
   header nav a {
       text-decoration: none;
       margin: 40px;
+      
      }
 .product-edit{
           /* display:inline; */
           margin-bottom: 50px;
           margin-top: 50px;
+
+          display: inline;
+      grid-template-columns:1fr 1fr ;
+      gap: 10px;
   }
 
   img{
       width: 30%;
   }
 
- .all-elements {
+ /* .all-elements {
 display: grid;
-  }
+  } */
  
   footer {
       background-color: #c39e5c;
@@ -42,3 +48,6 @@ align-items: center;
 #lists{
     column-count: 2;
 }
+  a:hover{
+      background-color: red;
+  }
