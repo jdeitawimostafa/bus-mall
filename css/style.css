@@ -7,7 +7,6 @@
       margin: auto;
       background-color: #f7d9d9;
   }
-background-color: burlywood;  }
 
   header {
       background-color: #e3d18a;
@@ -19,13 +18,9 @@ background-color: burlywood;  }
       
      }
 .product-edit{
-          /* display:inline; */
           margin-bottom: 50px;
           margin-top: 50px;
-
           display: inline;
-      grid-template-columns:1fr 1fr ;
-      gap: 10px;
   }
 
   img{

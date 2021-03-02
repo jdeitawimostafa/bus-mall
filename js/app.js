@@ -80,6 +80,8 @@ function renderNewProduct (){
     product.all[leftIndex].shown++;
     product.all[middleIdnex].shown++;
     product.all[rightIndex].shown++;
+}
+renderNewProduct();
 
 const ul = document.getElementById('lists');
 function listData(){
@@ -89,10 +91,9 @@ function listData(){
     liElement.textContent = `${product.all[i].name} has a ${product.all[i].clicks} votes and it's shown ${product.all[i].shown} times.`
   }
 }
-console.log(listData);
 
-  }
-  renderNewProduct();
+  console.log(listData);
+
 
 
  
@@ -119,23 +120,22 @@ products.addEventListener('click', function (event){
         }
       }
       else{
+        localStorage.setItem('product',JSON.stringify(product.all));
+        renderChart();
+
         const button = document.getElementById('button');
           button.style.display = 'inline';
-          button.addEventListener('click' , listData);
+          button.addEventListener('click',listData);
         
        
        
         
       }
-    } else{
-      localStorage.setItem('product',JSON.stringify(product.all));
-        renderChart();
-    }
-});
+    });
+    renderNewProduct();
 getProducts();
 
 // // button
-renderNewProduct();
 // const button = document.getElementById('button');
 // button.style.visibility= 'hidden';
 // button.addEventListener('submit',function(event){
