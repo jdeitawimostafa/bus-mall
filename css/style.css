@@ -5,7 +5,7 @@
   body {
       width: 960px;
       margin: auto;
-background-image:url(/background/mall.jpeg);
+      background-color: #f7d9d9;
   }
 
   header {
@@ -17,13 +17,13 @@ background-image:url(/background/mall.jpeg);
       margin: 40px;
      }
 .product-edit{
-          display: grid;
-      grid-template-columns:1fr 1fr ;
-      gap: 10px;
+          /* display:inline; */
+          margin-bottom: 50px;
+          margin-top: 50px;
   }
 
   img{
-      width: 40%;
+      width: 30%;
   }
 
  .all-elements {
@@ -35,6 +35,10 @@ display: grid;
       text-align: center;
   }
 
-  .lists{
-      display: none;
-  }
+#button{
+align-items: center;
+}
+
+#lists{
+    column-count: 2;
+}
