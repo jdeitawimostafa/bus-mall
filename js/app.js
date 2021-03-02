@@ -81,6 +81,16 @@ function renderNewProduct (){
     product.all[middleIdnex].shown++;
     product.all[rightIndex].shown++;
 
+const ul = document.getElementById('lists');
+function listData(){
+  for( let i = 0; i < product.all.length;i++){
+    const liElement = document.createElement('li');
+    ul.appendChild(liElement);
+    liElement.textContent = `${product.all[i].name} has a ${product.all[i].clicks} votes and it's shown ${product.all[i].shown} times.`
+  }
+}
+console.log(listData);
+
   }
   renderNewProduct();
 
@@ -105,7 +115,18 @@ products.addEventListener('click', function (event){
             counter++;
             renderNewProduct();
             console.log(product.all);
+            
         }
+      }
+      else{
+        const button = document.getElementById('button');
+          button.style.display = 'inline';
+          button.addEventListener('click' , listData);
+        
+       
+       
+        
+      }
     } else{
       localStorage.setItem('product',JSON.stringify(product.all));
         renderChart();
@@ -114,6 +135,7 @@ products.addEventListener('click', function (event){
 getProducts();
 
 // // button
+renderNewProduct();
 // const button = document.getElementById('button');
 // button.style.visibility= 'hidden';
 // button.addEventListener('submit',function(event){
